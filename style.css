@@ -1,0 +1,17 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  
+}
+body {
+  display: block;
+  background-color: black;
+  font-family: 'Monaco',monospace;
+  color: white;
+  text-align: center;
+}
+canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
