@@ -4,6 +4,8 @@ This is a maze game made in JavaScript that uses an implementation of Randomized
 ## Objectives:
 * Collect green coins
 * Reach the Goal (yellow)
-* Complete in as fast time as you can
+* Complete the maze as fast as you can!
 
 [Play Now!](https://shuj-t.github.io/MazeGame/)
+
+***The Random integer generator was taken from w3Schools.com***
