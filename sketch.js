@@ -67,13 +67,14 @@ function draw() {
 }
 
 var easy = document.createElement("button");
-easy.innerHTML = "easy";
+easy.innerHTML = "Easy";
 
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(easy);
 
 easy.addEventListener ("click", function() {
   size = 9;
+  screenSize = 24
   game.end();
   setup();
 });
@@ -86,6 +87,7 @@ body.appendChild(medium);
 
 medium.addEventListener ("click", function() {
   size = 19;
+  screenSize = 24;
   game.end();
   setup();
 });
@@ -102,7 +104,7 @@ hard.addEventListener ("click", function() {
   setup();
 });
 var extreme = document.createElement("button");
-extreme.innerHTML = "extreme";
+extreme.innerHTML = "Extreme";
 
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(extreme);
