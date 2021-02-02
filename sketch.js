@@ -1,6 +1,6 @@
 //2*(50)+1
 var size = 9
-var screenSize = 13
+var screenSize = 24
 
 var debug = true
 const WALL = 'w';
