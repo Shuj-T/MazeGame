@@ -22,30 +22,37 @@ function setup() {
   // createGameGrid(size)
 }
 
-function keyPressed(){
-  switch (keyCode) {
-    case UP_ARROW:
+//function keyPressed(){
+//}
+
+document.addEventListener('keydown', e => {
+  console.log(e.code)
+  switch (e.code) {
+    case 'KeyW':
+    case 'ArrowUp':
       game.player.move(UP);
       break;
-    case DOWN_ARROW:
+    case 'KeyS':
+    case 'ArrowDown':
       game.player.move(DOWN);
       break;
-    case LEFT_ARROW:
+    case 'KeyA':
+    case 'ArrowLeft':
       game.player.move(LEFT);
       break;
-    case RIGHT_ARROW:
+    case 'KeyD':
+    case 'ArrowRight':
       game.player.move(RIGHT);
       break;
   }
+
   if (game.updateScore()){
     game.end();
     setup();
   }
-  draw();
-}
+});
 
 function draw() {
-  background(220);
   for (var i = 0; i < size; i++){
     for (var j = 0; j < size; j++){
       var x = i * screenSize;
