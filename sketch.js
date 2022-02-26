@@ -21,15 +21,21 @@ function setup() {
   game = new Game();
   // createGameGrid(size)
 }
+
 function keyPressed(){
-  if(keyIsDown(UP_ARROW)){
-    game.player.move(UP);
-  }if (keyIsDown(DOWN_ARROW)){
-    game.player.move(DOWN);
-  }else if (keyIsDown(LEFT_ARROW)){
-    game.player.move(LEFT);
-  }else if (keyIsDown(RIGHT_ARROW)){
-    game.player.move(RIGHT);
+  switch (keyCode) {
+    case UP_ARROW:
+      game.player.move(UP);
+      break;
+    case DOWN_ARROW:
+      game.player.move(DOWN);
+      break;
+    case LEFT_ARROW:
+      game.player.move(LEFT);
+      break;
+    case RIGHT_ARROW:
+      game.player.move(RIGHT);
+      break;
   }
   if (game.updateScore()){
     game.end();
