@@ -2,7 +2,7 @@ class Game{
   constructor(){
     this.time = 0;
     this.moveCount = 0;
-    this.cointCount = 0;
+    this.coinCount = 0;
     
     this.player = new Player();
     this.gamegrid = new Gamegrid();
@@ -17,8 +17,8 @@ class Game{
     var x = this.player.x/screenSize
     var y = this.player.y/screenSize
     if (this.gamegrid.getObject(x,y) == COIN){
-        game.incrCointCount();
-        //console.log("COIN" + this.cointCount)
+        game.incrcoinCount();
+        //console.log("COIN" + this.coinCount)
         this.gamegrid.removeObject(x,y)
         
         return false;
@@ -35,8 +35,8 @@ class Game{
     this.moveCount++;
     document.getElementById("move").innerHTML = "Moves: "+ this.moveCount;
   }
-  incrCointCount(){
-    this.cointCount++;
-    document.getElementById("coins").innerHTML = "Coins: "+ this.cointCount;
+  incrcoinCount(){
+    this.coinCount++;
+    document.getElementById("coins").innerHTML = "Coins: "+ this.coinCount;
   } 
 }
