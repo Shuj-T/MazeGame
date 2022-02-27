@@ -42,7 +42,7 @@ document.addEventListener("keydown", (e) => {
       break;
   }
 
-  if (game.updateScore()) {
+  if (game.won) {
     game.end();
     setup();
   }

@@ -3,6 +3,7 @@ class Game {
     this.time = 0;
     this.moveCount = 0;
     this.coinCount = 0;
+    this.won = false;
 
     this.player = new Player();
     this.gamegrid = new Gamegrid();
@@ -16,17 +17,16 @@ class Game {
   updateScore(newX, newY) {
     var x = this.player.x / screenSize;
     var y = this.player.y / screenSize;
-    if (this.gamegrid.getObject(x, y) == COIN) {
+    if (this.gamegrid.getObject(newX, newY) == COIN) {
       game.incrcoinCount();
       //console.log("COIN" + this.coinCount)
-      this.gamegrid.removeObject(x, y);
+      this.gamegrid.removeObject(newX, newY);
 
       return false;
-    } else if (this.gamegrid.getObject(x, y) == GOAL) {
+    } else if (this.gamegrid.getObject(newX, newY) == GOAL) {
       //console.log("END GAME" + this.moveCount)
-
-      return true;
-    } else if (this.gamegrid.getObject(x, y) == FLOOR) {
+      this.won = true;
+    } else if (this.gamegrid.getObject(newX, newY) == FLOOR) {
       //console.log("FLOOR")
       return false;
     }
