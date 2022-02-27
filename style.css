@@ -23,6 +23,19 @@ canvas {
 
 h1 {
   margin: 0;
+  display: inline-block;
+}
+
+#ainsley1 {
+  position: absolute;
+  top: 15px;
+  left: 700px;
+}
+
+#ainsley2 {
+  position: absolute;
+  top: 15px;
+  right: 700px;
 }
 
 .scaled {
@@ -30,4 +43,21 @@ h1 {
   -ms-transform: scale(var(--amount), var(--amount)); /* IE 9 */
   -webkit-transform: scale(var(--amount), var(--amount)); /* Safari */
   transform:  translate(0, -310px) scale(var(--amount), var(--amount));
+}
+
+#plug {
+  position:absolute;
+  display: inline;
+  text-align: left;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+#plug a {
+  color: lime;
+}
+
+* {
+  box-sizing: border-box;
 }
