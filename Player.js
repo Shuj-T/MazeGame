@@ -54,7 +54,7 @@ class Player {
       console.log(this.canMoveTo(cord.x, cord.y));
     }
     if (this.canMoveTo(cord.x, cord.y)) {
-      game.gamegrid.movePlayer(this.x / 24, this.y / 24, cord.x / 24, cord.y / 24);
+      game.gamegrid.movePlayer(this.x / screenSize, this.y / screenSize, cord.x / screenSize, cord.y / screenSize);
       this.x = cord.x;
       this.y = cord.y;
       game.incrMoveCount();
