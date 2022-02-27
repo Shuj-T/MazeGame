@@ -8,6 +8,4 @@ This is a maze game made in JavaScript that uses an implementation of Randomized
 
 [Play Now!](https://shuj-t.github.io/MazeGame/)
 
-Contributions by nottnottloop
-
 ***The Random integer generator was taken from w3Schools.com***
