@@ -7,11 +7,6 @@ class Player {
     }
   }
 
-  show() {
-    fill(255, 100, 0);
-    rect(this.x, this.y, screenSize, screenSize);
-  }
-
   canMoveTo(x, y) {
     // coords = translate(x,y);
     x = x / screenSize;
@@ -23,13 +18,11 @@ class Player {
       if (this.test == true) {
         console.log("WRONG X");
       }
-
       return false;
     } else if (y < 0 || y > size - 1) {
       if (this.test == true) {
         console.log("WRONG Y");
       }
-
       return false;
     } else if (game.gamegrid.getObject(x, y) == WALL) {
       return false;
@@ -61,6 +54,7 @@ class Player {
       console.log(this.canMoveTo(cord.x, cord.y));
     }
     if (this.canMoveTo(cord.x, cord.y)) {
+      game.gamegrid.movePlayer(this.x / 24, this.y / 24, cord.x / 24, cord.y / 24);
       this.x = cord.x;
       this.y = cord.y;
       game.incrMoveCount();

@@ -63,12 +63,13 @@ function draw() {
         fill(255, 255, 0);
         rect(x, y, screenSize, screenSize);
       } else if (game.gamegrid.grid[j][i] == PLAYER) {
+        fill(255, 100, 0);
+        rect(x, y, screenSize, screenSize);
       } else if (game.gamegrid.grid[j][i] == COIN) {
         fill(34, 139, 34);
         rect(x, y, screenSize, screenSize);
       }
     }
-    game.player.show();
   }
 }
 

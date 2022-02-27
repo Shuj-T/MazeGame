@@ -7,8 +7,6 @@ class Game {
     this.player = new Player();
     this.gamegrid = new Gamegrid();
     this.timer = new Timer();
-
-    this.player.show();
   }
 
   end() {

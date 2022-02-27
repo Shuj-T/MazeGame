@@ -58,6 +58,12 @@ class Gamegrid {
       }
     }
     this.addObject(cell.x, cell.y, GOAL);
+    this.addObject(1, 1, PLAYER);
+  }
+
+  movePlayer(oldX, oldY, newX, newY) {
+    this.grid[oldY][oldX] = ' ';
+    this.grid[newY][newX] = PLAYER;
   }
 
   createVisitGrid() {
