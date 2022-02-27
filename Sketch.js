@@ -49,6 +49,7 @@ document.addEventListener("keydown", (e) => {
   //main game win transition
   if (game.won) {
     winText.classList.remove("hidden");
+    winText.classList.add("animating");
     game.won = false;
     game.transitioning = true;
     setTimeout(win, 1500);
@@ -57,6 +58,7 @@ document.addEventListener("keydown", (e) => {
 
 function win() {
     winText.classList.add("hidden");
+    winText.classList.remove("animating");
     game.end();
     setup();
 }

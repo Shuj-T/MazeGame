@@ -65,6 +65,20 @@ h1 {
   left: 50vw;
   transform: translate(-50%, -50%);
   z-index: 10;
+  animation: zoom .5s linear 1 both;
+}
+
+@keyframes zoom {
+  0% {
+    font-size: initial;
+  }
+  100% {
+    font-size: 100px;
+  }
+}
+
+.animating {
+  animation-play-state: running;
 }
 
 .hidden {
