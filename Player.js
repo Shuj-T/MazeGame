@@ -78,6 +78,7 @@ class Player{
         y: y,
     }
   }
+
   getPosition(){
     return {
         x: this.x,

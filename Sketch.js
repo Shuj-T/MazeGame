@@ -19,7 +19,6 @@ function setup() {
   document.getElementById("coins").innerHTML = "Coins: "+ 0;
   document.getElementById("time").innerHTML = "Time: "+ 0;
   game = new Game();
-  // createGameGrid(size)
 }
 
 document.addEventListener('keydown', e => {
@@ -111,6 +110,7 @@ hard.addEventListener ("click", function() {
   game.end();
   setup();
 });
+
 var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
 
