@@ -58,6 +58,19 @@ h1 {
   color: lime;
 }
 
+#winner {
+  position: absolute;
+  color: lime;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -4,6 +4,7 @@ class Game {
     this.moveCount = 0;
     this.coinCount = 0;
     this.won = false;
+    this.transitioning = false;
 
     this.player = new Player();
     this.gamegrid = new Gamegrid();
@@ -24,6 +25,7 @@ class Game {
 
       return false;
     } else if (this.gamegrid.getObject(newX, newY) == GOAL) {
+      //code to check for win
       //console.log("END GAME" + this.moveCount)
       this.won = true;
     } else if (this.gamegrid.getObject(newX, newY) == FLOOR) {

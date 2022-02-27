@@ -22,31 +22,38 @@ function setup() {
 }
 
 document.addEventListener("keydown", (e) => {
-  console.log(e.code);
-  switch (e.code) {
-    case "KeyW":
-    case "ArrowUp":
-      game.player.move(UP);
-      break;
-    case "KeyS":
-    case "ArrowDown":
-      game.player.move(DOWN);
-      break;
-    case "KeyA":
-    case "ArrowLeft":
-      game.player.move(LEFT);
-      break;
-    case "KeyD":
-    case "ArrowRight":
-      game.player.move(RIGHT);
-      break;
+  if (!game.transitioning) {
+    switch (e.code) {
+      case "KeyW":
+      case "ArrowUp":
+        game.player.move(UP);
+        break;
+      case "KeyS":
+      case "ArrowDown":
+        game.player.move(DOWN);
+        break;
+      case "KeyA":
+      case "ArrowLeft":
+        game.player.move(LEFT);
+        break;
+      case "KeyD":
+      case "ArrowRight":
+        game.player.move(RIGHT);
+        break;
+    }
   }
 
   if (game.won) {
-    game.end();
-    setup();
+    game.won = false;
+    game.transitioning = true;
+    setTimeout(win, 1500);
   }
 });
+
+function win() {
+    game.end();
+    setup();
+}
 
 function draw() {
   for (var i = 0; i < size; i++) {
