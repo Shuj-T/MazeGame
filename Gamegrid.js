@@ -8,11 +8,6 @@ class Gamegrid {
     this.generateMaze();
   }
 
-  show() {
-    fill(255, 100, 0);
-    rect(this.x, this.y, 30, 30);
-  }
-
   createGameGrid() {
     for (var i = 0; i < size; i++) {
       this.grid[i] = [];
@@ -62,6 +57,7 @@ class Gamegrid {
   }
 
   movePlayer(oldX, oldY, newX, newY) {
+    game.updateScore(newX, newY);
     this.grid[oldY][oldX] = ' ';
     this.grid[newY][newX] = PLAYER;
   }

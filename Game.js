@@ -13,7 +13,7 @@ class Game {
     this.timer.clearTimer();
   }
 
-  updateScore() {
+  updateScore(newX, newY) {
     var x = this.player.x / screenSize;
     var y = this.player.y / screenSize;
     if (this.gamegrid.getObject(x, y) == COIN) {
