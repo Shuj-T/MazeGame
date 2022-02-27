@@ -81,6 +81,7 @@ body.appendChild(easy);
 
 easy.addEventListener("click", function () {
   size = 9;
+  scaleUp();
   screenSize = 24;
   game.end();
   setup();
@@ -94,6 +95,7 @@ body.appendChild(medium);
 
 medium.addEventListener("click", function () {
   size = 19;
+  scaleUp();
   screenSize = 24;
   game.end();
   setup();
@@ -107,6 +109,7 @@ body.appendChild(hard);
 
 hard.addEventListener("click", function () {
   size = 29;
+  scaleUp();
   game.end();
   setup();
 });
@@ -119,6 +122,15 @@ body.appendChild(extreme);
 
 extreme.addEventListener("click", function () {
   size = 59;
+  scaleDown();
   game.end();
   setup();
 });
+
+function scaleDown() {
+  document.querySelector("#defaultCanvas0").classList.add("scaled");
+}
+
+function scaleUp() {
+  document.querySelector("#defaultCanvas0").classList.remove("scaled");
+}

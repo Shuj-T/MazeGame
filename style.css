@@ -10,14 +10,24 @@ body {
   font-family: 'Monaco',monospace;
   color: white;
   text-align: center;
+  position: fixed;
+  /*overflow-y: scroll;*/
+  width: 100%;
 }
 
 canvas {
-  display: block;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
 }
 
 h1 {
   margin: 0;
+}
+
+.scaled {
+  --amount: 0.55;
+  -ms-transform: scale(var(--amount), var(--amount)); /* IE 9 */
+  -webkit-transform: scale(var(--amount), var(--amount)); /* Safari */
+  transform:  translate(0, -310px) scale(var(--amount), var(--amount));
 }
