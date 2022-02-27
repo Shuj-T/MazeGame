@@ -1,75 +1,74 @@
 //2*(50)+1
-var size = 9
-var screenSize = 24
+var size = 9;
+var screenSize = 24;
 
-var debug = true
-const WALL = 'w';
-const FLOOR = ' ';
-const GOAL = 'g';
-const PLAYER = 'p';
-const COIN = 'c';
+var debug = true;
+const WALL = "w";
+const FLOOR = " ";
+const GOAL = "g";
+const PLAYER = "p";
+const COIN = "c";
 const UP = "UP";
 const DOWN = "DOWN";
 const LEFT = "LEFT";
 const RIGHT = "RIGHT";
 let game;
 function setup() {
-  createCanvas(screenSize*size, screenSize*size);
-  document.getElementById("move").innerHTML = "Moves: "+ 0;
-  document.getElementById("coins").innerHTML = "Coins: "+ 0;
-  document.getElementById("time").innerHTML = "Time: "+ 0;
+  createCanvas(screenSize * size, screenSize * size);
+  document.getElementById("move").innerHTML = "Moves: " + 0;
+  document.getElementById("coins").innerHTML = "Coins: " + 0;
+  document.getElementById("time").innerHTML = "Time: " + 0;
   game = new Game();
 }
 
-document.addEventListener('keydown', e => {
-  console.log(e.code)
+document.addEventListener("keydown", (e) => {
+  console.log(e.code);
   switch (e.code) {
-    case 'KeyW':
-    case 'ArrowUp':
+    case "KeyW":
+    case "ArrowUp":
       game.player.move(UP);
       break;
-    case 'KeyS':
-    case 'ArrowDown':
+    case "KeyS":
+    case "ArrowDown":
       game.player.move(DOWN);
       break;
-    case 'KeyA':
-    case 'ArrowLeft':
+    case "KeyA":
+    case "ArrowLeft":
       game.player.move(LEFT);
       break;
-    case 'KeyD':
-    case 'ArrowRight':
+    case "KeyD":
+    case "ArrowRight":
       game.player.move(RIGHT);
       break;
   }
 
-  if (game.updateScore()){
+  if (game.updateScore()) {
     game.end();
     setup();
   }
 });
 
 function draw() {
-  for (var i = 0; i < size; i++){
-    for (var j = 0; j < size; j++){
+  for (var i = 0; i < size; i++) {
+    for (var j = 0; j < size; j++) {
       var x = i * screenSize;
-      var y = j *screenSize;
-      if (game.gamegrid.getObject(i,j)== WALL){
+      var y = j * screenSize;
+      if (game.gamegrid.getObject(i, j) == WALL) {
         fill(0);
-        rect(x,y,screenSize,screenSize);
-      }else if(game.gamegrid.grid[j][i] == FLOOR) {
+        rect(x, y, screenSize, screenSize);
+      } else if (game.gamegrid.grid[j][i] == FLOOR) {
         fill(255);
-        rect(x,y,screenSize,screenSize);
-      }else if(game.gamegrid.grid[j][i] == GOAL){
-        fill(255,255,0);
-        rect(x,y,screenSize,screenSize);
-      }else if(game.gamegrid.grid[j][i] == PLAYER){
-        
-      }else if(game.gamegrid.grid[j][i] == COIN){
-        fill(34,139,34);
-        rect(x,y,screenSize,screenSize);
+        rect(x, y, screenSize, screenSize);
+      } else if (game.gamegrid.grid[j][i] == GOAL) {
+        fill(255, 255, 0);
+        rect(x, y, screenSize, screenSize);
+      } else if (game.gamegrid.grid[j][i] == PLAYER) {
+      } else if (game.gamegrid.grid[j][i] == COIN) {
+        fill(34, 139, 34);
+        rect(x, y, screenSize, screenSize);
       }
     }
-  game.player.show();
+    game.player.show();
   }
 }
 
@@ -79,9 +78,9 @@ easy.innerHTML = "Easy";
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(easy);
 
-easy.addEventListener ("click", function() {
+easy.addEventListener("click", function () {
   size = 9;
-  screenSize = 24
+  screenSize = 24;
   game.end();
   setup();
 });
@@ -92,7 +91,7 @@ medium.innerHTML = "Medium";
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(medium);
 
-medium.addEventListener ("click", function() {
+medium.addEventListener("click", function () {
   size = 19;
   screenSize = 24;
   game.end();
@@ -105,7 +104,7 @@ hard.innerHTML = "Hard";
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(hard);
 
-hard.addEventListener ("click", function() {
+hard.addEventListener("click", function () {
   size = 29;
   game.end();
   setup();
@@ -117,7 +116,7 @@ extreme.innerHTML = "Extreme";
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(extreme);
 
-extreme.addEventListener ("click", function() {
+extreme.addEventListener("click", function () {
   size = 59;
   game.end();
   setup();
