@@ -28,14 +28,14 @@ h1 {
 
 #ainsley1 {
   position: absolute;
-  top: 15px;
-  left: 700px;
+  top: 20px;
+  left: 36.5%;
 }
 
 #ainsley2 {
   position: absolute;
-  top: 15px;
-  right: 700px;
+  top: 10px;
+  left: 58.5%;
 }
 
 .scaled {
