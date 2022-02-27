@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   
 }
+
 body {
   display: block;
   background-color: black;
@@ -10,6 +11,7 @@ body {
   color: white;
   text-align: center;
 }
+
 canvas {
   display: block;
   margin-left: auto;

@@ -11,6 +11,7 @@ class Player{
     fill(255,100,0)
     rect(this.x,this.y,screenSize,screenSize);
   }
+
    canMoveTo(x,y){
     // coords = translate(x,y);
      x= x/screenSize

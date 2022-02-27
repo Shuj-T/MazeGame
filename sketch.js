@@ -22,9 +22,6 @@ function setup() {
   // createGameGrid(size)
 }
 
-//function keyPressed(){
-//}
-
 document.addEventListener('keydown', e => {
   console.log(e.code)
   switch (e.code) {
@@ -75,8 +72,6 @@ function draw() {
     }
   game.player.show();
   }
-  
-  
 }
 
 var easy = document.createElement("button");
