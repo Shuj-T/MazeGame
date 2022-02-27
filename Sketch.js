@@ -13,6 +13,9 @@ const DOWN = "DOWN";
 const LEFT = "LEFT";
 const RIGHT = "RIGHT";
 let game;
+
+let winText = document.querySelector('#winner');
+
 function setup() {
   createCanvas(screenSize * size, screenSize * size);
   document.getElementById("move").innerHTML = "Moves: " + 0;
@@ -43,7 +46,9 @@ document.addEventListener("keydown", (e) => {
     }
   }
 
+  //main game win transition
   if (game.won) {
+    winText.classList.remove("hidden");
     game.won = false;
     game.transitioning = true;
     setTimeout(win, 1500);
@@ -51,6 +56,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 function win() {
+    winText.classList.add("hidden");
     game.end();
     setup();
 }
