@@ -40,8 +40,8 @@ h1 {
 
 .scaled {
   --amount: 0.51;
-  -ms-transform: scale(var(--amount), var(--amount)); /* IE 9 */
-  -webkit-transform: scale(var(--amount), var(--amount)); /* Safari */
+  /*-ms-transform: scale(var(--amount), var(--amount));*/
+  /*-webkit-transform: scale(var(--amount), var(--amount));*/
   transform:  translate(0, -330px) scale(var(--amount), var(--amount));
 }
 

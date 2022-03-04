@@ -13,6 +13,7 @@ const DOWN = "DOWN";
 const LEFT = "LEFT";
 const RIGHT = "RIGHT";
 let game;
+let firstRun = true;
 
 let winText = document.querySelector('#winner');
 
@@ -22,6 +23,10 @@ function setup() {
   document.getElementById("coins").innerHTML = "Coins: " + 0;
   document.getElementById("time").innerHTML = "Time: " + 0;
   game = new Game();
+  if (firstRun) {
+    easy.click();
+    firstRun = false;
+  }
 }
 
 document.addEventListener("keydown", (e) => {
@@ -88,64 +93,54 @@ function draw() {
   }
 }
 
+var body = document.getElementsByTagName("body")[0];
+
+//EASY
 var easy = document.createElement("button");
 easy.innerHTML = "Easy";
-
-var body = document.getElementsByTagName("body")[0];
 body.appendChild(easy);
-
 easy.addEventListener("click", function () {
   size = 9;
-  scaleUp();
   screenSize = 24;
+  adjustBoardPosition(0, "200px", 1);
   game.end();
   setup();
 });
 
+//MEDIUM
 var medium = document.createElement("button");
 medium.innerHTML = "Medium";
-
-var body = document.getElementsByTagName("body")[0];
 body.appendChild(medium);
-
 medium.addEventListener("click", function () {
   size = 19;
-  scaleUp();
   screenSize = 24;
+  adjustBoardPosition(0, "100px", 1);
   game.end();
   setup();
 });
 
+//HARD
 var hard = document.createElement("button");
 hard.innerHTML = "Hard";
-
-var body = document.getElementsByTagName("body")[0];
 body.appendChild(hard);
-
 hard.addEventListener("click", function () {
   size = 29;
-  scaleUp();
+  adjustBoardPosition(0, "50px", 1);
   game.end();
   setup();
 });
 
+//EXTREME
 var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
-
-var body = document.getElementsByTagName("body")[0];
 body.appendChild(extreme);
-
 extreme.addEventListener("click", function () {
   size = 59;
-  scaleDown();
+  adjustBoardPosition(0, "-330px", 0.51);
   game.end();
   setup();
 });
 
-function scaleDown() {
-  document.querySelector("#defaultCanvas0").classList.add("scaled");
-}
-
-function scaleUp() {
-  document.querySelector("#defaultCanvas0").classList.remove("scaled");
+function adjustBoardPosition(xTrans = 0, yTrans = 0, scale = 1) {
+  document.querySelector("#defaultCanvas0").style.transform = `translate(${xTrans}, ${yTrans}) scale(${scale}, ${scale})`;
 }
