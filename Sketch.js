@@ -157,13 +157,12 @@ function adjustBoardPosition(xTrans = 0, yTrans = 0, scale = 1) {
   document.querySelector("#defaultCanvas0").style.transform = `translate(${xTrans}, ${yTrans}) scale(${scale}, ${scale})`;
 }
 
-const muteButton = document.querySelector("#mutebutton");
-const muteText = document.querySelector("#mute");
+const muteButton = document.querySelector("#mute");
 muteButton.addEventListener('click', () => {
   muted = !muted;
   if (muted) {
-    muteText.textContent = "Unmute";
+    muteButton.textContent = "Unmute";
   } else {
-    muteText.textContent = "Mute";
+    muteButton.textContent = "Mute";
   }
 });
