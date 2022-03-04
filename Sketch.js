@@ -101,8 +101,8 @@ easy.innerHTML = "Easy";
 body.appendChild(easy);
 easy.addEventListener("click", function () {
   size = 9;
-  screenSize = 24;
-  adjustBoardPosition(0, "200px", 1);
+  screenSize = 48;
+  adjustBoardPosition(0, "100px", 1);
   game.end();
   setup();
 });
@@ -113,8 +113,8 @@ medium.innerHTML = "Medium";
 body.appendChild(medium);
 medium.addEventListener("click", function () {
   size = 19;
-  screenSize = 24;
-  adjustBoardPosition(0, "100px", 1);
+  screenSize = 36;
+  adjustBoardPosition(0, "35px", 1);
   game.end();
   setup();
 });
@@ -125,6 +125,7 @@ hard.innerHTML = "Hard";
 body.appendChild(hard);
 hard.addEventListener("click", function () {
   size = 29;
+  screenSize = 24;
   adjustBoardPosition(0, "50px", 1);
   game.end();
   setup();
