@@ -15,6 +15,7 @@ const RIGHT = "RIGHT";
 let game;
 let muted = false;
 let firstRun = true;
+let coinGrabEasterEgg = false;
 
 let winText = document.querySelector('#winner');
 
@@ -111,7 +112,8 @@ var easy = document.createElement("button");
 easy.innerHTML = "Easy";
 easy.style.color = "green"
 body.appendChild(easy);
-easy.addEventListener("click", function () {
+easy.addEventListener("click", e => {
+  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
   size = 9;
   screenSize = 48;
   adjustBoardPosition(0, "100px", 1);
@@ -124,7 +126,8 @@ var medium = document.createElement("button");
 medium.innerHTML = "Medium";
 medium.style.color = "darkgoldenrod"
 body.appendChild(medium);
-medium.addEventListener("click", function () {
+medium.addEventListener("click", e => {
+  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
   size = 19;
   screenSize = 36;
   adjustBoardPosition(0, "35px", 1);
@@ -137,7 +140,8 @@ var hard = document.createElement("button");
 hard.innerHTML = "Hard";
 hard.style.color = "firebrick"
 body.appendChild(hard);
-hard.addEventListener("click", function () {
+hard.addEventListener("click", e => {
+  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
   size = 29;
   screenSize = 24;
   adjustBoardPosition(0, "50px", 1);
@@ -150,7 +154,8 @@ var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
 extreme.style.color = "deeppink"
 body.appendChild(extreme);
-extreme.addEventListener("click", function () {
+extreme.addEventListener("click", e => {
+  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
   size = 59;
   adjustBoardPosition(0, "-330px", 0.51);
   game.end();

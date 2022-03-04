@@ -48,7 +48,7 @@ class Gamegrid {
         this.markVisited(ncoords.x, ncoords.y);
         stack.push(ncoords);
       }
-      if (this.getRndInteger(1, 50) == 5) {
+      if (this.getRndInteger(1, 15) == 5 || coinGrabEasterEgg) {
         this.addObject(cell.x, cell.y, COIN);
       }
     }
