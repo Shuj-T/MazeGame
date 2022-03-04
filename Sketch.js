@@ -53,6 +53,7 @@ document.addEventListener("keydown", (e) => {
 
   //main game win transition
   if (game.won) {
+    yeahboi.play();
     winText.classList.remove("hidden");
     winText.classList.add("animating");
     game.won = false;

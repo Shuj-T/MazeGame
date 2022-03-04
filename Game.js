@@ -42,5 +42,6 @@ class Game {
   incrcoinCount() {
     this.coinCount++;
     document.getElementById("coins").innerHTML = "Coins: " + this.coinCount;
+    coin.play();
   }
 }
