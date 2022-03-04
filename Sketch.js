@@ -135,7 +135,7 @@ medium.addEventListener("click", function () {
 //HARD
 var hard = document.createElement("button");
 hard.innerHTML = "Hard";
-hard.style.color = "darkred"
+hard.style.color = "firebrick"
 body.appendChild(hard);
 hard.addEventListener("click", function () {
   size = 29;
@@ -148,7 +148,7 @@ hard.addEventListener("click", function () {
 //EXTREME
 var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
-extreme.style.color = "red"
+extreme.style.color = "deeppink"
 body.appendChild(extreme);
 extreme.addEventListener("click", function () {
   size = 59;
