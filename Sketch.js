@@ -175,3 +175,6 @@ muteButton.addEventListener('click', () => {
     muteButton.textContent = "Mute";
   }
 });
+
+document.querySelector("#ainsley1").addEventListener('click', () => !muted ? coin() : null);
+document.querySelector("#ainsley2").addEventListener('click', () => !muted ? yeahboi() : null);
