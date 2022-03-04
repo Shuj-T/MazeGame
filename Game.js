@@ -43,7 +43,7 @@ class Game {
     this.coinCount++;
     document.getElementById("coins").innerHTML = "Coins: " + this.coinCount;
     if (!muted) {
-      coin.play();
+      coin();
     }
   }
 }

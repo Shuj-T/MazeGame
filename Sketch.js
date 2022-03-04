@@ -55,7 +55,7 @@ document.addEventListener("keydown", (e) => {
   //main game win transition
   if (game.won) {
     if (!muted) {
-      yeahboi.play();
+      yeahboi();
     }
     randomWinTextColor();
     winText.classList.remove("hidden");
