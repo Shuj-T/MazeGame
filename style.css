@@ -38,13 +38,6 @@ h1 {
   left: 58.5%;
 }
 
-.scaled {
-  --amount: 0.51;
-  /*-ms-transform: scale(var(--amount), var(--amount));*/
-  /*-webkit-transform: scale(var(--amount), var(--amount));*/
-  transform:  translate(0, -330px) scale(var(--amount), var(--amount));
-}
-
 #plug {
   position:absolute;
   display: inline;
@@ -54,13 +47,26 @@ h1 {
   margin: 0;
 }
 
+#mute {
+  position:absolute;
+  display: inline;
+  text-align: left;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+#mute {
+  color: grey;
+}
+
 #plug a {
   color: lime;
 }
 
 #winner {
   position: absolute;
-  color: lime;
+  /*color: lime;*/
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);

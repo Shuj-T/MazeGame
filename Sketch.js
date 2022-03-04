@@ -13,6 +13,7 @@ const DOWN = "DOWN";
 const LEFT = "LEFT";
 const RIGHT = "RIGHT";
 let game;
+let muted = false;
 let firstRun = true;
 
 let winText = document.querySelector('#winner');
@@ -53,7 +54,10 @@ document.addEventListener("keydown", (e) => {
 
   //main game win transition
   if (game.won) {
-    yeahboi.play();
+    if (!muted) {
+      yeahboi.play();
+    }
+    randomWinTextColor();
     winText.classList.remove("hidden");
     winText.classList.add("animating");
     game.won = false;
@@ -61,6 +65,12 @@ document.addEventListener("keydown", (e) => {
     setTimeout(win, 1500);
   }
 });
+
+function randomWinTextColor() {
+  const colors = ['blue', 'lime','pink', 'red', 'orange', 'cyan', 'magenta', 'cornflowerblue', 'yellow']
+  const num = Math.floor(Math.random() * 10)
+  winText.style.color = colors[num]
+}
 
 function win() {
     winText.classList.add("hidden");
@@ -146,3 +156,14 @@ extreme.addEventListener("click", function () {
 function adjustBoardPosition(xTrans = 0, yTrans = 0, scale = 1) {
   document.querySelector("#defaultCanvas0").style.transform = `translate(${xTrans}, ${yTrans}) scale(${scale}, ${scale})`;
 }
+
+const muteButton = document.querySelector("#mutebutton");
+const muteText = document.querySelector("#mute");
+muteButton.addEventListener('click', () => {
+  muted = !muted;
+  if (muted) {
+    muteText.textContent = "Unmute";
+  } else {
+    muteText.textContent = "Mute";
+  }
+});
