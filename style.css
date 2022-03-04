@@ -63,6 +63,10 @@ h1 {
   color: lime;
 }
 
+button {
+  margin-right: 5px;
+}
+
 #winner {
   position: absolute;
   /*color: lime;*/

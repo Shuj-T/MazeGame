@@ -109,6 +109,7 @@ var body = document.getElementsByTagName("body")[0];
 //EASY
 var easy = document.createElement("button");
 easy.innerHTML = "Easy";
+easy.style.color = "green"
 body.appendChild(easy);
 easy.addEventListener("click", function () {
   size = 9;
@@ -121,6 +122,7 @@ easy.addEventListener("click", function () {
 //MEDIUM
 var medium = document.createElement("button");
 medium.innerHTML = "Medium";
+medium.style.color = "darkgoldenrod"
 body.appendChild(medium);
 medium.addEventListener("click", function () {
   size = 19;
@@ -133,6 +135,7 @@ medium.addEventListener("click", function () {
 //HARD
 var hard = document.createElement("button");
 hard.innerHTML = "Hard";
+hard.style.color = "darkred"
 body.appendChild(hard);
 hard.addEventListener("click", function () {
   size = 29;
@@ -145,6 +148,7 @@ hard.addEventListener("click", function () {
 //EXTREME
 var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
+extreme.style.color = "red"
 body.appendChild(extreme);
 extreme.addEventListener("click", function () {
   size = 59;
