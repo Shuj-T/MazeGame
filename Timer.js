@@ -1,6 +1,6 @@
 class Timer {
   constructor() {
-    this.elapsedTime = 0;
+    this.elapsedTime = 1;
     this.active = true;
 
     if (debug == true && this.active == true) {
