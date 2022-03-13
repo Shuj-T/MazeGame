@@ -165,15 +165,12 @@ hard.addEventListener("click", (e) => {
 var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
 extreme.style.color = "deeppink";
-var ains = document.getElementById("ainsleys");
 body.appendChild(extreme);
 extreme.addEventListener("click", (e) => {
   e.shiftKey ? (coinGrabEasterEgg = true) : (coinGrabEasterEgg = false);
-  // if (coinGrabEasterEgg) {
-  //   document.getElementById("ainsleys").style.display = "block";
-  // }
 
   size = 59;
+  screenSize = 24;
   adjustBoardPosition(0, "-330px", 0.51);
   game.end();
   setup();
