@@ -1,24 +1,45 @@
-<!DOCTYPE html><html lang="en"><head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
   </head>
   <body>
-    <p id="plug">Game made by <a href="https://github.com/Shuj-T">Shuj-T</a><br>Additional code by <a href="https://github.com/nottnottloop">NottNott</a></p>
+    <p id="plug">
+      Game made by <a href="https://github.com/Shuj-T">Shuj-T</a
+      ><br />Additional code by
+      <a href="https://github.com/nottnottloop">NottNott</a>
+    </p>
     <p id="mute">Mute</p>
-    <h1 id="time">Time: 0</h1><br>
-    <img id="ainsley1" src="ainsley1.jpg" alt="Give your meat a good 'ol rub" width="100">
-    <img id="ainsley2" src="ainsley2.jpg" alt="Yeah boiiiii" width="100">
-    <h1 id="move">Moves: 0</h1><br>
-    <h1 id="coins">Coins: 0</h1><br>
-    <h1 id="winner" class="hidden">You Won!!!</h1><br>
-    <script defer src="Sketch.js"></script>
-    <script defer src="p5.js"></script>
+    <h1 id="time">Time: 0</h1>
+    <br />
+    <div id="ainsleys">
+      <img
+        id="ainsley1"
+        src="resources/images/ainsley1.jpg"
+        alt="Give your meat a good 'ol rub"
+        width="100"
+      />
+      <img
+        id="ainsley2"
+        src="resources/images/ainsley2.jpg"
+        alt="Yeah boiiiii"
+        width="100"
+      />
+    </div>
+    <h1 id="move">Moves: 0</h1>
+    <br />
+    <h1 id="coins">Coins: 0</h1>
+    <br />
+    <h1 id="winner" class="hidden">You Won!!!</h1>
+    <br />
+    <script defer src="src/Sketch.js"></script>
+    <script defer src="src/p5.js"></script>
     <!--<script src="p5.sound.min.js"></script>-->
-    <script defer src="Player.js"></script>
-    <script defer src="Gamegrid.js"></script>
-    <script defer src="Game.js"></script>
-    <script defer src="Timer.js"></script>
-    <script defer src="Audio.js"></script>
-</body>
+    <script defer src="src/Player.js"></script>
+    <script defer src="src/Gamegrid.js"></script>
+    <script defer src="src/Game.js"></script>
+    <script defer src="src/Timer.js"></script>
+    <script defer src="src/Audio.js"></script>
+  </body>
 </html>

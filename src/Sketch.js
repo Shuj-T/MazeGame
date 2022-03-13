@@ -17,13 +17,14 @@ let muted = false;
 let firstRun = true;
 let coinGrabEasterEgg = false;
 
-let winText = document.querySelector('#winner');
+let winText = document.querySelector("#winner");
 
 function setup() {
   createCanvas(screenSize * size, screenSize * size);
   document.getElementById("move").innerHTML = "Moves: " + 0;
   document.getElementById("coins").innerHTML = "Coins: " + 0;
   document.getElementById("time").innerHTML = "Time: " + 0;
+  document.getElementById("ainsleys").style.display = "none";
   game = new Game();
   if (firstRun) {
     easy.click();
@@ -68,16 +69,26 @@ document.addEventListener("keydown", (e) => {
 });
 
 function randomWinTextColor() {
-  const colors = ['blue', 'lime','pink', 'red', 'orange', 'cyan', 'magenta', 'cornflowerblue', 'yellow']
-  const num = Math.floor(Math.random() * 10)
-  winText.style.color = colors[num]
+  const colors = [
+    "blue",
+    "lime",
+    "pink",
+    "red",
+    "orange",
+    "cyan",
+    "magenta",
+    "cornflowerblue",
+    "yellow",
+  ];
+  const num = Math.floor(Math.random() * 10);
+  winText.style.color = colors[num];
 }
 
 function win() {
-    winText.classList.add("hidden");
-    winText.classList.remove("animating");
-    game.end();
-    setup();
+  winText.classList.add("hidden");
+  winText.classList.remove("animating");
+  game.end();
+  setup();
 }
 
 function draw() {
@@ -110,10 +121,11 @@ var body = document.getElementsByTagName("body")[0];
 //EASY
 var easy = document.createElement("button");
 easy.innerHTML = "Easy";
-easy.style.color = "green"
+easy.style.color = "green";
 body.appendChild(easy);
-easy.addEventListener("click", e => {
-  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
+
+easy.addEventListener("click", (e) => {
+  e.shiftKey ? (coinGrabEasterEgg = true) : (coinGrabEasterEgg = false);
   size = 9;
   screenSize = 48;
   adjustBoardPosition(0, "100px", 1);
@@ -124,10 +136,10 @@ easy.addEventListener("click", e => {
 //MEDIUM
 var medium = document.createElement("button");
 medium.innerHTML = "Medium";
-medium.style.color = "darkgoldenrod"
+medium.style.color = "darkgoldenrod";
 body.appendChild(medium);
-medium.addEventListener("click", e => {
-  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
+medium.addEventListener("click", (e) => {
+  e.shiftKey ? (coinGrabEasterEgg = true) : (coinGrabEasterEgg = false);
   size = 19;
   screenSize = 36;
   adjustBoardPosition(0, "35px", 1);
@@ -138,10 +150,10 @@ medium.addEventListener("click", e => {
 //HARD
 var hard = document.createElement("button");
 hard.innerHTML = "Hard";
-hard.style.color = "firebrick"
+hard.style.color = "firebrick";
 body.appendChild(hard);
-hard.addEventListener("click", e => {
-  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
+hard.addEventListener("click", (e) => {
+  e.shiftKey ? (coinGrabEasterEgg = true) : (coinGrabEasterEgg = false);
   size = 29;
   screenSize = 24;
   adjustBoardPosition(0, "50px", 1);
@@ -152,22 +164,33 @@ hard.addEventListener("click", e => {
 //EXTREME
 var extreme = document.createElement("button");
 extreme.innerHTML = "Extreme";
-extreme.style.color = "deeppink"
+extreme.style.color = "deeppink";
+var ains = document.getElementById("ainsleys");
 body.appendChild(extreme);
-extreme.addEventListener("click", e => {
-  e.shiftKey ? coinGrabEasterEgg = true : coinGrabEasterEgg = false;
+extreme.addEventListener("click", (e) => {
+  e.shiftKey ? (coinGrabEasterEgg = true) : (coinGrabEasterEgg = false);
+  // if (coinGrabEasterEgg) {
+  //   document.getElementById("ainsleys").style.display = "block";
+  // }
+
   size = 59;
   adjustBoardPosition(0, "-330px", 0.51);
   game.end();
   setup();
+
+  if (coinGrabEasterEgg) {
+    document.getElementById("ainsleys").style.display = "block";
+  }
 });
 
 function adjustBoardPosition(xTrans = 0, yTrans = 0, scale = 1) {
-  document.querySelector("#defaultCanvas0").style.transform = `translate(${xTrans}, ${yTrans}) scale(${scale}, ${scale})`;
+  document.querySelector(
+    "#defaultCanvas0"
+  ).style.transform = `translate(${xTrans}, ${yTrans}) scale(${scale}, ${scale})`;
 }
 
 const muteButton = document.querySelector("#mute");
-muteButton.addEventListener('click', () => {
+muteButton.addEventListener("click", () => {
   muted = !muted;
   if (muted) {
     muteButton.textContent = "Unmute";
@@ -176,5 +199,9 @@ muteButton.addEventListener('click', () => {
   }
 });
 
-document.querySelector("#ainsley1").addEventListener('click', () => !muted ? coin() : null);
-document.querySelector("#ainsley2").addEventListener('click', () => !muted ? yeahboi() : null);
+document
+  .querySelector("#ainsley1")
+  .addEventListener("click", () => (!muted ? coin() : null));
+document
+  .querySelector("#ainsley2")
+  .addEventListener("click", () => (!muted ? yeahboi() : null));
